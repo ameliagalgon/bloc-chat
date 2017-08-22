@@ -1,26 +1,21 @@
 (function(){
-    function ModalCtrl($uibModal, $log, $document){
+    function ModalCtrl($uibModal){
 
         var modalInstance = null;
 
         this.open = function() {
             console.log("open the modal");
+
             modalInstance = $uibModal.open({
               animation: true,
+              controller: 'ModalInstanceCtrl',
+              controllerAs: 'modal',
               templateUrl: '/templates/modal.html'
             });
         };
-
-        this.ok = function(newRoom){
-            modalInstance.close({$value: newRoom});
-        }
-
-        this.cancel = function(){
-            modalInstance.dismiss('cancel');
-        }
     }
 
     angular
         .module('blocChat')
-        .controller('ModalCtrl', ['$uibModal', '$log', '$document', ModalCtrl])
-})
+        .controller('ModalCtrl', ['$uibModal', ModalCtrl])
+}());

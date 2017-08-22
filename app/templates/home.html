@@ -1,11 +1,11 @@
-<h1>Home Page</h1>
+<div>
+    <h1>Bloc Chat</h1>
+    <div ng-controller="ModalCtrl as modal">
+        <!-- open the modal when you click the button -->
+        <button ng-click="modal.open()" type="button">New room</button>
+    </div>
 
-<!-- TODO: ModalCtrl is not registered. Need to figure out why -->
-<div ng-controller="ModalCtrl as modal">
-    <!-- open the modal when you click the button -->
-    <button ng-click="modal.open()">New room</button>
-</div>
-
-<div ng-repeat="room in home.rooms track by $index">
-    <div>{{room.$value}}</div>
+    <div ng-repeat="room in home.rooms track by $index">
+        <div>{{room.$value}}</div>
+    </div>
 </div>
