@@ -9,18 +9,22 @@
         * @desc Reference to the list of databases in the messages database
         * @type {Object}
         */
-        var ref = firebase.database().ref().child("messages");
+        var ref = firebase.database().ref().child("messages").orderByChild("roomId");
         var messages = $firebaseArray(ref);
-
+        console.log(messages);
         Message.getByRoomId = function(roomId){
-            console.log("Get messages by room id: " + roomId);
-            var roomMessages = [];
-            ref.orderByChild("roomId").equalTo(roomId).on("child_added", function(snapshot) {
-                roomMessages.push(snapshot);
+            //var roomMessages = ref.equalTo(roomId);
+            var roomMessages = $firebaseArray(ref.equalTo(roomId));
+            //console.log(roomMessages);
+
+            var result = [];
+            roomMessages.$loaded().then(function(){
+                angular.forEach(roomMessages, function(message){
+                    result.push(message);
+                })
             });
 
-            return roomMessages;
-
+            return result;
         }
 
         return Message;
