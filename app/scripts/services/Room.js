@@ -21,6 +21,7 @@
         * @type {Object}
         */
         Room.all = rooms;
+
         /**
         * @function add()
         * @desc Add function called to add a new room in the database
