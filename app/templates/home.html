@@ -15,7 +15,12 @@
             {{ home.currentRoom.$value }}
         </h3>
         <div class="room-messages">
-            {{ home.messages.getByRoomId(home.currentRoom.$id) }}
+            <div class="message" ng-repeat="message in home.messages.getByRoomId(home.currentRoom.$id)">
+                <!-- TODO: message values not showing -->
+                <div class="message-username">{{ message.username }}</div>
+                <div class="message-timestamp">{{ message.sentAt }}</div>
+                <div class="message-content">{{ message.content }}</div>
+            </div>
         </div>
     </main>
 </div>
