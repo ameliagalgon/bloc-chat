@@ -15,8 +15,7 @@
             {{ home.rooms[0] }}
         </h3>
         <div class="room-messages">
-            <!-- TODO: doesn't seem to be calling getByRoomId -->
-            {{ messages.getByRoomId(home.rooms[0].$id) }}
+            {{ home.messages.getByRoomId(home.rooms[0].$id).username }}
         </div>
     </main>
 </div>
