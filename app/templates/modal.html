@@ -4,10 +4,10 @@
     </div>
     <div class="modal-body">
         Enter the room name:<br>
-        <input type="text" name="roomName" ng-model="modal.roomName">
+        <input type="text" name="roomName" ng-model="modalInstance.roomName">
     </div>
     <div class="modal-footer">
-        <button ng-click="modal.cancel('cancel')">Cancel</button>
-        <button ng-click="modal.ok(modal.roomName)">Create room</button>
+        <button ng-click="modalInstance.cancel('cancel')">Cancel</button>
+        <button ng-click="modalInstance.ok(modalInstance.roomName)">Create room</button>
     </div>
 </div>

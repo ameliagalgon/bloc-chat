@@ -26,9 +26,14 @@
         * @desc Add function called to add a new room in the database
         * @param {Object} room
         */
-        Room.add = function(){
-            //Use the firebase method $add here
-            console.log("Add new room: ");
+        Room.add = function(room){
+            console.log("Add new room");
+            //Use the firebase method $add
+            rooms.$add(room).then(function(ref){
+                var id = ref.key;
+                console.log("added record with id " + id);
+                rooms.$indexFor(id); //returns location in the array
+            });
         };
 
         return Room;
