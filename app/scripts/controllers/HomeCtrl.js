@@ -2,6 +2,11 @@
     function HomeCtrl(Room, Message) {
         this.rooms = Room.all;
         this.messages = Message;
+        this.currentRoom = null;
+
+        this.setCurrentRoom = function(room){
+            this.currentRoom = room
+        }
     }
 
     angular

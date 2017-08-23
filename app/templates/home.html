@@ -6,16 +6,16 @@
             <button ng-click="modal.open()" type="button">New room</button>
         </div>
 
-        <div ng-repeat="room in home.rooms track by $index">
-            <div>{{room.$value}}</div>
+        <div class="room-link" ng-repeat="room in home.rooms track by $index">
+            <div ng-click="home.setCurrentRoom(room)">{{room.$value}}</div>
         </div>
     </div>
     <main class="message-content">
         <h3 class="room-header">
-            {{ home.rooms[0] }}
+            {{ home.currentRoom.$value }}
         </h3>
         <div class="room-messages">
-            {{ home.messages.getByRoomId(home.rooms[0].$id).username }}
+            {{ home.messages.getByRoomId(home.currentRoom.$id) }}
         </div>
     </main>
 </div>

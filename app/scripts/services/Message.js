@@ -14,8 +14,11 @@
 
         Message.getByRoomId = function(roomId){
             console.log("Get messages by room id: " + roomId);
-            var roomMessages = ref.orderByChild("roomId").equalTo(roomId);
-            //console.log(roomMessages);
+            var roomMessages = [];
+            ref.orderByChild("roomId").equalTo(roomId).on("child_added", function(snapshot) {
+                roomMessages.push(snapshot);
+            });
+
             return roomMessages;
 
         }
