@@ -25,6 +25,10 @@
             return result;
         }
 
+        Message.send = function(newMessage){
+            //send method logic
+        };
+
         return Message;
     }
 
