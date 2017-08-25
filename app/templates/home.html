@@ -5,12 +5,13 @@
             <!-- open the modal when you click the button -->
             <button ng-click="modal.open()" type="button">New room</button>
         </div>
-
-        <div class="room-link" ng-repeat="room in home.rooms track by $index">
-            <div ng-click="home.setCurrentRoom(room)">{{room.$value}}</div>
+        <div class="room-list">
+            <div class="room-link" ng-repeat="room in home.rooms track by $index">
+                <div ng-click="home.setCurrentRoom(room)">{{room.$value}}</div>
+            </div>
         </div>
     </div>
-    <main class="message-content">
+    <div class="room-content">
         <h3 class="room-header">
             {{ home.currentRoom.$value }}
         </h3>
@@ -21,5 +22,5 @@
                 <div class="message-content">{{ message.content }}</div>
             </div>
         </div>
-    </main>
+    </div>
 </div>

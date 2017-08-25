@@ -1,0 +1,47 @@
+/*** HOME VIEW ***/
+.html{
+    margin: 0;
+    padding: 0;
+}
+.home-view{
+    display: flex;
+}
+.home-view .side-menu{
+    background-color: lightblue;
+    width: 20%;
+    height: 100vh;
+    padding: 10px;
+}
+.home-view .side-menu .room-list{
+    margin-top: 20px;
+}
+.home-view .side-menu .room-list .room-link{
+    padding: 5px;
+    margin-left: 10%;
+}
+
+.home-view .room-content{
+    background-color: #fff;
+    height: 100vh;
+    width: 80%;
+}
+.home-view .room-content .room-header{
+    padding: 20px 0 20px 50px;
+}
+.home-view .room-content .message{
+    padding: 10px 50px;
+}
+.home-view .room-content .message:nth-child(odd){
+    background-color: #eee;
+}
+.home-view .room-content .message .message-username{
+    font-weight: bold;
+    float: left;
+}
+.home-view .room-content .message .message-timestamp{
+    font-style: italic;
+    text-align: right;
+}
+.home-view .room-content .message .message-content{
+    font-size: 1.2em;
+}
