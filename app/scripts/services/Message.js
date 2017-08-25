@@ -9,13 +9,11 @@
         * @desc Reference to the list of databases in the messages database
         * @type {Object}
         */
-        var ref = firebase.database().ref().child("messages").orderByChild("roomId");
+        var ref = firebase.database().ref().child("messages");
         var messages = $firebaseArray(ref);
-        console.log(messages);
+
         Message.getByRoomId = function(roomId){
-            //var roomMessages = ref.equalTo(roomId);
-            var roomMessages = $firebaseArray(ref.equalTo(roomId));
-            //console.log(roomMessages);
+            var roomMessages = $firebaseArray(ref.orderByChild("roomId").equalTo(roomId));
 
             var result = [];
             roomMessages.$loaded().then(function(){

@@ -17,6 +17,12 @@
         var rooms = $firebaseArray(ref);
 
         /**
+        * @desc Messages from the currently selected room
+        * @type {Object}
+        */
+        Room.currentMessages = null; //set in HomeCtrl.js
+
+        /**
         * @desc Public reference to array of rooms
         * @type {Object}
         */

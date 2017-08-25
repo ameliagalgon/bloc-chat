@@ -6,6 +6,7 @@
 
         this.setCurrentRoom = function(room){
             this.currentRoom = room
+            this.currentRoom.currentMessages = this.messages.getByRoomId(room.$id);
         }
     }
 
