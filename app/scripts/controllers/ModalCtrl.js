@@ -15,7 +15,7 @@
 
             modalInstance.result.then(function(){
                 Room.add(modalInstance.result.$$state.value);
-            })
+            });
         };
     }
 
