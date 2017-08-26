@@ -45,3 +45,15 @@
 .home-view .room-content .message .message-content{
     font-size: 1.2em;
 }
+.home-view .room-content .send-message{
+    width: 100%;
+    display: block;
+    bottom: 0;
+}
+.home-view .room-content .send-message input{
+    width: 90%;
+    margin: 0 0 0 1%;
+}
+.home-view .room-content .send-message button{
+    width: 8%;
+}

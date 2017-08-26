@@ -27,6 +27,14 @@
 
         Message.send = function(newMessage){
             //send method logic
+            var username = $cookies.get('blocChatCurrentUser');
+            var currentTime = new Date();
+            var currentRoomId = "-KsBUVfD77DE6EqfQHcJ"; //this points to Room 1
+            var messageObj = "{\"content\":" +newMessage+ ",\"roomId\":" +currentRoomId+"
+        ,\"sentAt\":" +currentTime+ ",\"username\":" +username+" }"; //incorrent syntax
+
+            console.log(messageObj);
+
         };
 
         return Message;
