@@ -15,6 +15,9 @@
             hours = hours % 12;
             hours = hours ? hours : 12;
             var minutes = messageDate.getMinutes();
+            if(minutes < 10){
+                minutes = "0" + minutes;
+            }
             var output = hours + ":" + minutes + " " + ampm;
             return output;
         };
