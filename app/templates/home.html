@@ -22,11 +22,9 @@
                 <div class="message-content">{{ message.content }}</div>
             </div>
         </div>
-        <div class="send-message">
-            <form ng-submit="home.message.send(newMessage)">
-                <input type="text" placeholder="Type message here..." ng-model="newMessage" name="newMessage">
-                <button type="button">Send</button>
-            </form>
+        <div class="send-message" ng-show="home.currentRoom">
+            <input type="text" placeholder="Type message here..." ng-model="home.messages.newMessage">
+            <button type="button" ng-click="home.messages.send(home.messages.newMessage, home.currentRoom)">Send</button>
         </div>
     </div>
 </div>

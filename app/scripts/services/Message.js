@@ -1,5 +1,5 @@
 (function(){
-    function Message($firebaseArray){
+    function Message($firebaseArray, $cookies){
         /**
         * @desc Message empty object
         * @type {Object}
@@ -25,16 +25,27 @@
             return result;
         }
 
-        Message.send = function(newMessage){
+        Message.send = function(newMessage, room){
             //send method logic
             var username = $cookies.get('blocChatCurrentUser');
+            //console.log(username);
             var currentTime = new Date();
+            //console.log(currentTime);
             var currentRoomId = "-KsBUVfD77DE6EqfQHcJ"; //this points to Room 1
-            var messageObj = "{\"content\":" +newMessage+ ",\"roomId\":" +currentRoomId+"
-        ,\"sentAt\":" +currentTime+ ",\"username\":" +username+" }"; //incorrent syntax
+            var messageObj = {
+                "content": newMessage,
+                "roomId": room.$id,
+                "sentAt": currentTime.getTime(),
+                "username": username
+            };
 
             console.log(messageObj);
 
+            messages.$add(messageObj).then(function(ref){
+                var id = ref.key;
+                console.log("added record with id " + id);
+                messages.$indexFor(id);
+            });
         };
 
         return Message;
@@ -42,5 +53,5 @@
 
     angular
         .module('blocChat')
-        .factory('Message', ['$firebaseArray', Message]);
+        .factory('Message', ['$firebaseArray','$cookies', Message]);
 })();
