@@ -44,6 +44,9 @@
                 console.log("added record with id " + id);
                 messages.$indexFor(id);
             });
+
+            //clear the input text
+            document.getElementById("message-text").value = '';
         };
 
         return Message;

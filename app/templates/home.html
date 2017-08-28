@@ -23,7 +23,7 @@
             </div>
         </div>
         <div class="send-message" ng-show="home.currentRoom">
-            <input type="text" placeholder="Type message here..." ng-model="home.messages.newMessage">
+            <input id="message-text" type="text" placeholder="Type message here..." ng-model="home.messages.newMessage">
             <button type="button" ng-click="home.messages.send(home.messages.newMessage, home.currentRoom)">Send</button>
         </div>
     </div>
