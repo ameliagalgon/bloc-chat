@@ -18,7 +18,7 @@
         <div class="room-messages">
             <div class="message" ng-repeat="message in home.currentRoom.currentMessages">
                 <div class="message-username">{{ message.username }}</div>
-                <div class="message-timestamp">{{ message.sentAt }}</div>
+                <div class="message-timestamp">{{ message.sentAt | timestamp }}</div>
                 <div class="message-content">{{ message.content }}</div>
             </div>
         </div>
