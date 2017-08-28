@@ -30,8 +30,6 @@
             var username = $cookies.get('blocChatCurrentUser');
             //console.log(username);
             var currentTime = new Date();
-            //console.log(currentTime);
-            var currentRoomId = "-KsBUVfD77DE6EqfQHcJ"; //this points to Room 1
             var messageObj = {
                 "content": newMessage,
                 "roomId": room.$id,
