@@ -13,22 +13,12 @@
         var messages = $firebaseArray(ref);
 
         Message.getByRoomId = function(roomId){
-            var roomMessages = $firebaseArray(ref.orderByChild("roomId").equalTo(roomId));
-
-            var result = [];
-            roomMessages.$loaded().then(function(){
-                angular.forEach(roomMessages, function(message){
-                    result.push(message);
-                })
-            });
-
-            return result;
+            return $firebaseArray(ref.orderByChild("roomId").equalTo(roomId));
         }
 
         Message.send = function(newMessage, room){
             //send method logic
             var username = $cookies.get('blocChatCurrentUser');
-            //console.log(username);
             var currentTime = new Date();
             var messageObj = {
                 "content": newMessage,
